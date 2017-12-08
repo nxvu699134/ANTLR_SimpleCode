@@ -27,6 +27,11 @@ public class IrField extends IrBaseNode
 		this.__type = type;
 	}
 
+	public IrType getType()
+	{
+		return this.__type;
+	}
+
 	@Override
 	public NodeType getNodeType()
 	{

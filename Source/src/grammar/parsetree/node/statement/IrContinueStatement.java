@@ -1,5 +1,6 @@
 package grammar.parsetree.node.statement;
 
+import grammar.parsetree.node.NodeType;
 import grammar.parsetree.node.Offset;
 
 public class IrContinueStatement extends IrBaseStatement
@@ -10,8 +11,8 @@ public class IrContinueStatement extends IrBaseStatement
 	}
 
 	@Override
-	public StatementType getStatementType()
+	public NodeType getNodeType()
 	{
-		return StatementType.CONTINUE;
+		return NodeType.CONTINUE;
 	}
 }

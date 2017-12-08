@@ -28,5 +28,14 @@ public class IrType extends IrBaseNode
 	public static final IrType BOOLEAN = new IrType("boolean", 1, null);
 	public static final IrType VOID = new IrType("void", 0, null);
 
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (null == obj)
+			return false;
+		if (! (obj instanceof IrType)) return false;
+		IrType other = (IrType) obj;
+		return other.getName().equals(this.getName());
+	}
 	private int __size = 0;
 }

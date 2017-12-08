@@ -1,5 +1,6 @@
 package grammar.parsetree.node.statement;
 
+import grammar.parsetree.node.NodeType;
 import grammar.parsetree.node.Offset;
 import grammar.parsetree.node.expression.IrExpression;
 import grammar.parsetree.node.expression.IrLocation;
@@ -16,9 +17,9 @@ public class IrAssignStatement extends IrBaseStatement
 	}
 
 	@Override
-	public StatementType getStatementType()
+	public NodeType getNodeType()
 	{
-		return StatementType.ASSIGN;
+		return NodeType.ASSIGN;
 	}
 
 	private IrLocation __location;

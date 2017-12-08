@@ -27,5 +27,11 @@ public abstract class IrBaseCallExpression extends IrBaseExpression implements I
 		return this._args.get(i);
 	}
 
+	@Override
+	public int getArgCount()
+	{
+		return this._args.size();
+	}
+
 	protected List<IrNode> _args;
 }

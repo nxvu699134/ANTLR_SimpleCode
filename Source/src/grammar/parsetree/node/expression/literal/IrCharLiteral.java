@@ -1,5 +1,6 @@
 package grammar.parsetree.node.expression.literal;
 
+import grammar.parsetree.node.NodeType;
 import grammar.parsetree.node.Offset;
 import grammar.parsetree.node.expression.IrBaseExpression;
 
@@ -14,6 +15,12 @@ public class IrCharLiteral extends IrBaseExpression
 	public String getValue()
 	{
 		return this.__value;
+	}
+
+	@Override
+	public NodeType getNodeType()
+	{
+		return NodeType.CHAR_LIT;
 	}
 
 	private String __value;

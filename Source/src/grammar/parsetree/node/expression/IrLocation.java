@@ -7,8 +7,7 @@ public class IrLocation extends IrBaseExpression
 {
 	public IrLocation(String name, IrExpression expr, Offset offset)
 	{
-		super(name, offset);
-		this.__expr = expr;
+		super(name, expr, offset);
 	}
 
 	@Override
@@ -16,6 +15,4 @@ public class IrLocation extends IrBaseExpression
 	{
 		return NodeType.LOCATION;
 	}
-
-	IrExpression __expr;
 }

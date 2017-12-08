@@ -11,18 +11,37 @@ import java.util.List;
 
 public class IrMethodDecl extends IrBaseMemberDecl
 {
-	public IrMethodDecl(IrType type, IrId id, IrBlock block, Offset offset)
+	public IrMethodDecl(IrType type, IrId id, Offset offset)
 	{
 		super(id.getName(), offset);
 		this.__type = type;
 		this.__id = id;
-		this.__block = block;
 		this.__args = new ArrayList<>();
 	}
 
 	public void pushArg(IrMethodArg arg)
 	{
 		this.__args.add(arg);
+	}
+
+	public void setBlock(IrBlock block)
+	{
+		this.__block = block;
+	}
+
+	public IrType getType()
+	{
+		return this.__type;
+	}
+
+	public IrMethodArg getArg(int i)
+	{
+		return this.__args.get(i);
+	}
+
+	public int getArgCount()
+	{
+		return this.__args.size();
 	}
 
 	@Override

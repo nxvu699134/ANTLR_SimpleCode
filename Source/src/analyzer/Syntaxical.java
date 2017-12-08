@@ -14,6 +14,8 @@ import org.antlr.v4.runtime.LexerNoViableAltException;
 import org.antlr.v4.runtime.misc.Interval;
 import org.antlr.v4.runtime.tree.ParseTree;
 
+import java.util.List;
+
 public class Syntaxical extends Base
 {
 	public Syntaxical(String input, String filename)
@@ -52,6 +54,7 @@ public class Syntaxical extends Base
 			SymbolTableVisitor visitor = new SymbolTableVisitor();
 			IrNode root = visitor.visit(tree);
 			SymbolTable symtab = visitor.getSymbolTable();
+			List<Exception> errors = visitor.getErrors();
 			System.out.println(root);
 		}
 

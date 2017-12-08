@@ -1,5 +1,7 @@
 package grammar.parsetree.node.statement;
 
+import grammar.parsetree.node.IrNode;
+import grammar.parsetree.node.NodeType;
 import grammar.parsetree.node.vardecl.IrVarDecl;
 
 import java.util.ArrayList;
@@ -29,9 +31,9 @@ public class IrBlock extends IrBaseStatement
 	}
 
 	@Override
-	public StatementType getStatementType()
+	public NodeType getNodeType()
 	{
-		return StatementType.BLOCK;
+		return NodeType.BLOCK;
 	}
 
 	private List<IrStatement> __statements;

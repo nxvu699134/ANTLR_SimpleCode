@@ -1,5 +1,6 @@
 package grammar.parsetree.node.statement;
 
+import grammar.parsetree.node.NodeType;
 import grammar.parsetree.node.Offset;
 import grammar.parsetree.node.expression.IrExpression;
 
@@ -12,10 +13,21 @@ public class IrIfStatement extends IrBaseStatement
 		this.__trueBlock = trueBlock;
 		this.__elseBlock = elseBlock;
 	}
-	@Override
-	public StatementType getStatementType()
+
+	public void setTrueBlock(IrBlock block)
 	{
-		return StatementType.IF;
+		this.__trueBlock = block;
+	}
+
+	public void setElseBlock(IrBlock block)
+	{
+		this.__elseBlock = block;
+	}
+
+	@Override
+	public NodeType getNodeType()
+	{
+		return NodeType.IF;
 	}
 
 	private IrExpression __expr;

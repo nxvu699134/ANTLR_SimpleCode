@@ -1,5 +1,7 @@
 import analyzer.Lexical;
 import analyzer.Syntaxical;
+import grammar.parsetree.node.Offset;
+import grammar.parsetree.node.type.IrType;
 import test.SyntaxAnalyzeTest;
 import utils.OutputWriter;
 
@@ -76,13 +78,12 @@ public class Main
 //			e.printStackTrace();
 //		}
 
-//        SyntaxAnalyzeTest test = new SyntaxAnalyzeTest("./src/parser/legal-05"); //il14
-//        test.Run();
+		//sai: parser/il14, semantics/il10
+        SyntaxAnalyzeTest test = new SyntaxAnalyzeTest("./src/semantics/illegal-17.dcf");
+        test.Run();
 
 //		LexicalAnalyzeTest test = new LexicalAnalyzeTest("./src/scanner/ws1");
 //		test.Run();
 
-
     }
-
 }

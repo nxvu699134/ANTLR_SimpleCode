@@ -1,5 +1,6 @@
 package grammar.parsetree.node.statement;
 
+import grammar.parsetree.node.NodeType;
 import grammar.parsetree.node.Offset;
 import grammar.parsetree.node.expression.IrExpression;
 import grammar.parsetree.node.id.IrId;
@@ -17,11 +18,15 @@ public class IrForStatement extends IrBaseStatement
 	}
 
 	@Override
-	public StatementType getStatementType()
+	public NodeType getNodeType()
 	{
-		return StatementType.FOR;
+		return NodeType.FOR;
 	}
 
+	public void setBlock(IrBlock block)
+	{
+		this.__block = block;
+	}
 	private IrId __count;
 	private IrExpression __startExpr;
 	private IrExpression __endExpr;

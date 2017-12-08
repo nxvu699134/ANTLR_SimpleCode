@@ -4,5 +4,4 @@ import grammar.parsetree.node.IrNode;
 
 public interface IrStatement extends IrNode
 {
-	StatementType getStatementType();
 }
