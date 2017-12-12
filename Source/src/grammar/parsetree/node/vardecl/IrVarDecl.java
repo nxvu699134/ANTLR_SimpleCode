@@ -5,6 +5,12 @@ import grammar.parsetree.node.IrBaseNode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 04/Dec/2017
+ */
+
 public class IrVarDecl extends IrBaseNode
 {
 	public IrVarDecl()

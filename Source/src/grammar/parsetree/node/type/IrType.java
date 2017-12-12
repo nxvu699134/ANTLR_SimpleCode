@@ -3,6 +3,12 @@ package grammar.parsetree.node.type;
 import grammar.parsetree.node.IrBaseNode;
 import grammar.parsetree.node.Offset;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 04/Dec/2017
+ */
+
 public class IrType extends IrBaseNode
 {
 

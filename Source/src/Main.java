@@ -1,89 +1,114 @@
 import analyzer.Lexical;
+import analyzer.Semantic;
 import analyzer.Syntaxical;
-import grammar.parsetree.node.Offset;
-import grammar.parsetree.node.type.IrType;
 import test.SyntaxAnalyzeTest;
 import utils.OutputWriter;
 
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import org.apache.commons.cli.*;
+
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 28/Nov/2017
+ */
 
 public class Main
 {
-	private static void parse(String srcfile, int mode) throws IOException
+	private static void debug_parse(String srcFile, int mode) throws IOException
 	{
-		String input = new utils.ANTLRReader(srcfile).read();
+		String input = new utils.ANTLRReader(srcFile).read();
 
 		analyzer.Base analyzer = null;
 
 		if (0 == mode)
-			analyzer = new Lexical(input, srcfile);
+			analyzer = new Lexical(input, srcFile);
 		else
-			analyzer = new Syntaxical(input, srcfile);
+			analyzer = new Syntaxical(input, srcFile);
 
-		Path p = Paths.get(srcfile);
+		Path p = Paths.get(srcFile);
 		String srcout = Paths.get(null != p.getParent() ? p.getParent().toString() : "",
 				p.getFileName().toString() + ".out").toString();
 		OutputWriter ow = new OutputWriter(srcout);
 		ow.write(analyzer.analyze());
 	}
 
+	private static void inter_parse(String srcFile) throws IOException
+	{
+		String input = new utils.ANTLRReader(srcFile).read();
+		Semantic analyzer = new Semantic(input, srcFile);
+		Path p = Paths.get(srcFile);
+		String srcout = Paths.get(null != p.getParent() ? p.getParent().toString() : "",
+				p.getFileName().toString() + ".out").toString();
+		OutputWriter ow = new OutputWriter(srcout);
+		ow.write(analyzer.analyze());
+
+	}
+
     public static void main(String[] args) throws IOException
 	{
 		// parse arguments
-//		final Map<String, List<String>> params = new HashMap<>();
-//
-//		List<String> options = null;
-//		try
-//		{
-//			for (final String a : args)
-//			{
-//				if (a.charAt(0) == '-')
-//				{
-//					if (a.length() < 2)
-//					{
-//						throw new Exception("Error at argument " + a);
-//					}
-//
-//					options = new ArrayList<>();
-//					params.put(a.substring(1), options);
-//				}
-//				else if (options != null)
-//				{
-//					options.add(a);
-//				}
-//				else
-//				{
-//					throw new Exception("Illegal parameter usage");
-//				}
-//			}
-//
-//			//-------------------------------------------------
-//			try
-//			{
-//				int mode = Integer.parseInt(params.get("target").get(0));
-//				String filename = params.get("debug").get(0);
-//				parse(filename, mode);
-//			}
-//			catch (NullPointerException ne)
-//			{
-//				throw new Exception("-target or -debug is not found");
-//			}
-//
-//		}
-//		catch (Exception e)
-//		{
-//			e.printStackTrace();
-//		}
+		Option help = new Option("h", "help", false, "show help message");
+
+		Option target =  new Option("target", true, "option mode of program");
+		target.setRequired(true);
+		target.setArgName("option");
+
+		Option debug = new Option("debug", "run program as debug mode");
+
+		Options options = new Options();
+		options.addOption(help);
+		options.addOption(target);
+		options.addOption(debug);
+
+		try
+		{
+			CommandLineParser parser = new DefaultParser();
+			CommandLine cmd = parser.parse(options, args);
+
+			if (cmd.hasOption("h"))
+			{
+				HelpFormatter helpFormatter = new HelpFormatter();
+				helpFormatter.printHelp(
+						"SimpleCode [-h] [-debug] -target <option> <SimpleCode_file>",
+						options);
+			}
+
+			if (1 < cmd.getArgList().size())
+			{
+				throw new ParseException("Missing <SimpleCode_file>");
+			}
+			else if (1 > cmd.getArgList().size())
+			{
+				throw new ParseException("Unknown some arguments");
+			}
+
+			if (cmd.hasOption("target"))
+			{
+				String srcFile = cmd.getArgList().get(0);
+				if (cmd.hasOption("debug"))
+				{
+					int mode = Integer.parseInt(cmd.getOptionValue("target"));
+					debug_parse(srcFile, mode);
+				}
+				else
+					inter_parse(srcFile);
+			}
+			else
+				throw new ParseException("Missing target option");
+		}
+		catch (ParseException | NumberFormatException | IOException e)
+		{
+			e.printStackTrace();
+		}
 
 		//sai: parser/il14, semantics/il10
-        SyntaxAnalyzeTest test = new SyntaxAnalyzeTest("./src/semantics/illegal-17.dcf");
-        test.Run();
+//        SyntaxAnalyzeTest test = new SyntaxAnalyzeTest("./src/semantics/illegal-17.dcf");
+//        test.Run();
 
 //		LexicalAnalyzeTest test = new LexicalAnalyzeTest("./src/scanner/ws1");
 //		test.Run();
-
     }
 }

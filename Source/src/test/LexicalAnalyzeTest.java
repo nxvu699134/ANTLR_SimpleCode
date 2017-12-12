@@ -4,6 +4,12 @@ import analyzer.*;
 
 import java.io.IOException;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 28/Nov/2017
+ */
+
 public class LexicalAnalyzeTest
 {
 	public LexicalAnalyzeTest(String FileName)

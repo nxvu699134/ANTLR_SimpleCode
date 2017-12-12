@@ -5,6 +5,12 @@ import grammar.parsetree.node.Offset;
 import grammar.parsetree.node.expression.IrExpression;
 import grammar.parsetree.node.id.IrId;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 04/Dec/2017
+ */
+
 public class IrForStatement extends IrBaseStatement
 {
 

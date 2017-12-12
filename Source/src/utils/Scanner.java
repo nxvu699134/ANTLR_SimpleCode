@@ -9,6 +9,12 @@ import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.io.IOException;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 12:09 PM, 28/Nov/2017
+ */
+
 public class Scanner
 {
     public Scanner(String FileName)

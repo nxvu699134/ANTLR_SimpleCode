@@ -8,6 +8,12 @@ import sun.awt.Symbol;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 01/Dec/2017
+ */
+
 public class IrClassDecl extends IrBaseNode
 {
 	public IrClassDecl(String name)

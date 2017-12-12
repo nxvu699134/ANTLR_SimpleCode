@@ -4,6 +4,12 @@ import grammar.parsetree.node.NodeType;
 import grammar.parsetree.node.Offset;
 import grammar.parsetree.node.expression.IrBaseExpression;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 01/Dec/2017
+ */
+
 public class IrBooleanLiteral extends IrBaseExpression
 {
 	public IrBooleanLiteral(boolean value, Offset offset)

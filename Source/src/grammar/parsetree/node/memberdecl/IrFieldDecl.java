@@ -6,6 +6,12 @@ import grammar.parsetree.node.Offset;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 04/Dec/2017
+ */
+
 public class IrFieldDecl extends IrBaseMemberDecl
 {
 	public IrFieldDecl(Offset offset)

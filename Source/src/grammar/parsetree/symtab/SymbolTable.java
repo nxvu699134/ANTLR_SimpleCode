@@ -7,6 +7,12 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 04/Dec/2017
+ */
+
 public class SymbolTable
 {
 	public SymbolTable(SymbolTable outer, IrNode owner)

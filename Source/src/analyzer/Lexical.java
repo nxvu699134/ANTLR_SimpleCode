@@ -11,6 +11,12 @@ import org.antlr.v4.runtime.misc.Interval;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 12:09 PM, 28/Nov/2017
+ */
+
 public class Lexical extends Base
 {
 

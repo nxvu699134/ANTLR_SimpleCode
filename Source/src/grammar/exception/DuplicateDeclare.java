@@ -1,6 +1,10 @@
 package grammar.exception;
 
-import grammar.parsetree.node.Offset;
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 01/Dec/2017
+ */
 
 public class DuplicateDeclare extends Exception
 {

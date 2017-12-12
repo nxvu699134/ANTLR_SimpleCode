@@ -3,6 +3,12 @@ package grammar.parsetree.symtab;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 04/Dec/2017
+ */
+
 public class Symbol
 {
 	public String toString()

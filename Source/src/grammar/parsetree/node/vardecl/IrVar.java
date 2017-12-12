@@ -6,6 +6,12 @@ import grammar.parsetree.node.Offset;
 import grammar.parsetree.node.id.IrId;
 import grammar.parsetree.node.type.IrType;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 04/Dec/2017
+ */
+
 public class IrVar extends IrBaseNode
 {
 	public IrVar(IrType type, IrId id, Offset offset)

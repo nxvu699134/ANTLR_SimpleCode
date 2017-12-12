@@ -6,6 +6,12 @@ import grammar.parsetree.node.expression.IrExpression;
 import grammar.parsetree.node.expression.IrLocation;
 import grammar.parsetree.node.op.IrAssignOp;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 04/Dec/2017
+ */
+
 public class IrAssignStatement extends IrBaseStatement
 {
 	public IrAssignStatement(IrLocation location, IrAssignOp op, IrExpression expr, Offset offset)

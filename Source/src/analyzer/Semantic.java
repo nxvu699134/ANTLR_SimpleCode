@@ -19,12 +19,12 @@ import java.util.List;
 /**
  * User: innovation
  * Author: Nguyen Xuan Vu
- * Date: 12:09 PM, 28/Nov/2017
+ * Date: 07/Dec/2017
  */
-
-public class Syntaxical extends Base
+public class Semantic extends Base
 {
-	public Syntaxical(String input, String filename)
+
+	public Semantic(String input, String filename)
 	{
 		super(filename);
 		ANTLRInputStream istream = new ANTLRInputStream(input);
@@ -50,15 +50,20 @@ public class Syntaxical extends Base
 		this.parser.removeErrorListeners();
 	}
 
-	@Override
 	public String analyze()
 	{
+		StringBuilder res = new StringBuilder();
 		try
 		{
 			ParseTree tree = this.parser.root();
+			tree.toStringTree(this.parser);
 //			System.out.println(tree.toStringTree(this.parser));
+			SymbolTableVisitor visitor = new SymbolTableVisitor();
+			visitor.visit(tree);
+			List<Exception> errors = visitor.getErrors();
+			for (Exception ex : errors)
+				res.append(ex.getMessage()).append("\n");
 		}
-
 		catch (RuntimeException e)
 		{
 			Throwable t = e.getCause();
@@ -72,6 +77,6 @@ public class Syntaxical extends Base
 			}
 		}
 
-		return "";
+		return res.toString();
 	}
 }

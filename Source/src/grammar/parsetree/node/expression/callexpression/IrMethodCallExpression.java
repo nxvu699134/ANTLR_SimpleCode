@@ -4,6 +4,12 @@ import grammar.parsetree.node.NodeType;
 import grammar.parsetree.node.Offset;
 import grammar.parsetree.node.id.IrId;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 04/Dec/2017
+ */
+
 public class IrMethodCallExpression extends IrBaseCallExpression
 {
 	public IrMethodCallExpression(IrId methodName, Offset offset)

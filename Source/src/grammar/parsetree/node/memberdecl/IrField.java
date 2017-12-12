@@ -7,6 +7,12 @@ import grammar.parsetree.node.expression.literal.IrIntLiteral;
 import grammar.parsetree.node.id.IrId;
 import grammar.parsetree.node.type.IrType;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 04/Dec/2017
+ */
+
 public class IrField extends IrBaseNode
 {
 	public IrField(IrType type, IrId id, IrIntLiteral intLiteral, Offset offset)

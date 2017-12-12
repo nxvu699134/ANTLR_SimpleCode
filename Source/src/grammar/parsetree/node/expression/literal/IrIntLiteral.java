@@ -5,6 +5,12 @@ import grammar.parsetree.node.NodeType;
 import grammar.parsetree.node.Offset;
 import grammar.parsetree.node.expression.IrBaseExpression;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 01/Dec/2017
+ */
+
 public class IrIntLiteral extends IrBaseExpression
 {
 	public IrIntLiteral(String value, Offset offset)

@@ -9,6 +9,12 @@ import grammar.parsetree.node.type.IrType;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * User: innovation
+ * Author: Nguyen Xuan Vu
+ * Date: 04/Dec/2017
+ */
+
 public class IrMethodDecl extends IrBaseMemberDecl
 {
 	public IrMethodDecl(IrType type, IrId id, Offset offset)
